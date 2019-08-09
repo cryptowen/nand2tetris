@@ -26,7 +26,6 @@
 // if (out == 0) set zr = 1
 // if (out < 0) set ng = 1
 
-
 CHIP ALU {
     IN  
         x[16], y[16],  // 16-bit inputs        
@@ -44,14 +43,14 @@ CHIP ALU {
 
     PARTS:
     // Put you code here:
-    // Not16(in=x, out=notX);
-    // And16(a=x, b=notX, out=zero);
-    Mux16(a=x, b=false, sel=zx, out=x1);
+    Not16(in=x, out=notX);
+    And16(a=x, b=notX, out=zero);
+    Mux16(a=x, b=zero, sel=zx, out=x1);
     
     Not16(in=x1, out=notX1);
     Mux16(a=x1, b=notX1, sel=nx, out=x2);
 
-    Mux16(a=y, b=false, sel=zy, out=y1);
+    Mux16(a=y, b=zero, sel=zy, out=y1);
 
     Not16(in=y1, out=notY1);
     Mux16(a=y1, b=notY1, sel=ny, out=y2);
@@ -61,8 +60,5 @@ CHIP ALU {
     Mux16(a=x2Andy2, b=x2Addy2, sel=f, out=out1);
 
     Not16(in=out1, out=notOut1);
-    Mux16(a=out1, b=notOut1, sel=no, out=out, out[15]=ng, out=out2);
-
-    Or16way(in=out2, out=outContains1);
-    Not(in=outContains1, out=zr);
+    Mux16(a=out1, b=notOut1, sel=no, out=out);
 }

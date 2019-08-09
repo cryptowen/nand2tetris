@@ -1,0 +1,26 @@
+/**
+if nx == 1 then x = !x,
+           else x = x.
+*/
+CHIP ConditionNot16 {
+    IN x[16], nx;
+    OUT out[16];
+
+    PARTS:
+    Xor(a=x[0], b=nx, out=out[0]);
+    Xor(a=x[1], b=nx, out=out[1]);
+    Xor(a=x[2], b=nx, out=out[2]);
+    Xor(a=x[3], b=nx, out=out[3]);
+    Xor(a=x[4], b=nx, out=out[4]);
+    Xor(a=x[5], b=nx, out=out[5]);
+    Xor(a=x[6], b=nx, out=out[6]);
+    Xor(a=x[7], b=nx, out=out[7]);
+    Xor(a=x[8], b=nx, out=out[8]);
+    Xor(a=x[9], b=nx, out=out[9]);
+    Xor(a=x[10], b=nx, out=out[10]);
+    Xor(a=x[11], b=nx, out=out[11]);
+    Xor(a=x[12], b=nx, out=out[12]);
+    Xor(a=x[13], b=nx, out=out[13]);
+    Xor(a=x[14], b=nx, out=out[14]);
+    Xor(a=x[15], b=nx, out=out[15]);
+}

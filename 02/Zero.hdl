@@ -1,0 +1,12 @@
+/**
+if (zx == 1) set x = 0
+            else x = x
+*/
+CHIP Zero {
+    IN x, zx;
+    OUT out;
+
+    PARTS:
+    Not(in=zx, out=notZx);
+    And(a=x, b=notZx, out=out);
+}

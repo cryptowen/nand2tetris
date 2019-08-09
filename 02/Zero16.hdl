@@ -1,0 +1,26 @@
+/**
+if (zx == 1) set x = 0
+            else x = x
+*/
+CHIP Zero16 {
+    IN x[16], zx;
+    OUT out[16];
+
+    PARTS:
+    Zero(x=x[0], zx=zx, out=out[0]);
+    Zero(x=x[1], zx=zx, out=out[1]);
+    Zero(x=x[2], zx=zx, out=out[2]);
+    Zero(x=x[3], zx=zx, out=out[3]);
+    Zero(x=x[4], zx=zx, out=out[4]);
+    Zero(x=x[5], zx=zx, out=out[5]);
+    Zero(x=x[6], zx=zx, out=out[6]);
+    Zero(x=x[7], zx=zx, out=out[7]);
+    Zero(x=x[8], zx=zx, out=out[8]);
+    Zero(x=x[9], zx=zx, out=out[9]);
+    Zero(x=x[10], zx=zx, out=out[10]);
+    Zero(x=x[11], zx=zx, out=out[11]);
+    Zero(x=x[12], zx=zx, out=out[12]);
+    Zero(x=x[13], zx=zx, out=out[13]);
+    Zero(x=x[14], zx=zx, out=out[14]);
+    Zero(x=x[15], zx=zx, out=out[15]);
+}
